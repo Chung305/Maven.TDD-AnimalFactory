@@ -40,4 +40,63 @@ public class CatTest {
         Assert.assertEquals(givenId, retrievedId);
     }
 
+    @Test
+    public void setNameTest(){
+        //ggiven ( cat data)
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // when ( a cat is contructed)
+        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+        String newName = "Chung";
+        cat.setName(newName);
+
+        //then
+        Assert.assertEquals(newName, cat.getName());
+
+    }
+
+    @Test
+    public void speakTest(){
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+
+        //then
+        String expected = "meow!";
+
+        Assert.assertEquals(expected, cat.speak());
+    }
+
+    @Test
+    public void setBirthdayTest(){
+
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+
+        Date date = new Date();
+        cat.setBirthDate(date);
+
+        //then
+        Assert.assertEquals(date, cat.getBirthDate());
+    }
+
+    @Test
+    public void eatTest(){
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+    }
+
 }
