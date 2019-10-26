@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Dog;
 
+import java.util.Date;
+
 /**
  * @author leon on 4/19/18.
  */
@@ -28,4 +30,53 @@ public class DogTest {
         String dogName = dog.getName();
         Assert.assertEquals(dogName, givenName);
     }
+    @Test
+    public void contructorTest(){
+        // Given (cat data)
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Dog cat = new Dog(givenName, givenBirthDate, givenId);
+
+        // When (we retrieve data from the cat)
+        String retrievedName = cat.getName();
+        Date retrievedBirthDate = cat.getBirthDate();
+        Integer retrievedId = cat.getId();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(givenName, retrievedName);
+        Assert.assertEquals(givenBirthDate, retrievedBirthDate);
+        Assert.assertEquals(givenId, retrievedId);
+    }
+
+    @Test
+    public void speakTest(){
+        Dog dog = new Dog(null,null,null);
+
+        String expected = dog.speak();
+
+        Assert.assertEquals(expected, dog.speak());
+
+    }
+
+    @Test
+    public void setDateTest(){
+        Dog dog = new Dog(null, null, null);
+        Date date = new Date();
+        dog.setBirthDate(date);
+
+        Assert.assertEquals(date, dog.getBirthDate());
+    }
+
+    @Test
+    public
+//
+//    @Test
+//
+//    @Test
+//
+//    @Test
 }
